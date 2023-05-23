@@ -338,7 +338,8 @@ install -p -m 0755 build-nox/src/emacs %{buildroot}%{_bindir}/emacs-%{version}-n
 %endif
 
 # Make sure movemail isn't setgid
-chmod 755 %{buildroot}%{emacs_libexecdir}/movemail
+# Comment out because file is no longer produced when compiling
+# chmod 755 %{buildroot}%{emacs_libexecdir}/movemail
 
 mkdir -p %{buildroot}%{site_lisp}
 install -p -m 0644 %SOURCE5 %{buildroot}%{site_lisp}/site-start.el
