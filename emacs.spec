@@ -320,8 +320,9 @@ rm %{buildroot}%{_bindir}/emacs
 touch %{buildroot}%{_bindir}/emacs
 
 # Do not compress the files which implement compression itself (#484830)
-gunzip %{buildroot}%{_datadir}/emacs/%{version}/lisp/jka-compr.el.gz
-gunzip %{buildroot}%{_datadir}/emacs/%{version}/lisp/jka-cmpr-hook.el.gz
+# Comment out these lines to see if build succeeds
+# gunzip %{buildroot}%{_datadir}/emacs/%{version}/lisp/jka-compr.el.gz
+# gunzip %{buildroot}%{_datadir}/emacs/%{version}/lisp/jka-cmpr-hook.el.gz
 
 # Install emacs.pdmp of the emacs with GTK+
 install -p -m 0644 build-gtk/src/emacs.pdmp %{buildroot}%{_bindir}/emacs-%{version}.pdmp
